@@ -1,20 +1,23 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
 
-char * Bureaucrat::GradeTooLowException::what()
+const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low\n";
+	return "Grade too low";
 }
 
-char * Bureaucrat::GradeTooHighException::what()
+const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high\n";
+	return "Grade too high";
 }
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(1)
+Bureaucrat::Bureaucrat()
 {
+	this->_name = "default";
+	this->_grade = 1;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	if (grade < 1)
 	{
@@ -56,7 +59,7 @@ int Bureaucrat::getGrade() const
 	return this->_grade;
 }
 
-std::ostream & operator<<(std::ostream os, const Bureaucrat &bureaucrat)
+std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
 	return os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 }
