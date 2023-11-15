@@ -17,6 +17,7 @@ class Form
 	
 	public:
 		Form();
+		Form(int gradeSigned, int gradeExecute);
 		Form(const Form &copy);
 		~Form();
 
