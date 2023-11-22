@@ -24,6 +24,8 @@ class AForm
 		AForm & operator=(const AForm &form);
 
 		std::string getName() const;
+		int getGradeExecute() const;
+		bool isSigned() const;
 		void beSigned(Bureaucrat &bureaucrat);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 

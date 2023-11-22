@@ -29,6 +29,16 @@ std::string AForm::getName() const
 	return this->_name;
 }
 
+int AForm::getGradeExecute() const
+{
+	return this->_requiredGradeExecute;
+}
+
+bool AForm::isSigned() const
+{
+	return this->_signed;
+}
+
 void AForm::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_requiredGradeSigned)

@@ -1,4 +1,6 @@
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
@@ -23,5 +25,17 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
-	// TODO : implement...
+	if (!this->isSigned())
+	{
+		return throw "Form is not signed";
+	}
+	if (executor.getGrade() > this->getGradeExecute())
+	{
+		return throw AForm::GradeTooLowException();
+	}
+	if (rand() % 2)
+	{
+		std::cout << executor.getName() << " has been robotomized" << std::endl;
+		// TODO : implement...
+	}
 }

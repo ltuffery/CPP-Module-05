@@ -1,4 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
@@ -22,5 +25,25 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-	// TODO : implement...
+	if (!this->isSigned())
+	{
+		return throw "Form is not signed";
+	}
+	if (executor.getGrade() > this->getGradeExecute())
+	{
+		return throw AForm::GradeTooLowException();
+	}
+	std::ofstream file(executor.getName() + "_shrubbery");
+
+	file << "       _-_" << std::endl;
+	file << "    /~~   ~~\\" << std::endl;
+	file << " /~~         ~~\\" << std::endl;
+	file << "{               }" << std::endl;
+	file << " \\  _-     -_  /"<< std::endl;
+	file << "   ~  \\\\ //  ~" << std::endl;
+	file << "_- -   | | _- _" << std::endl;
+	file << "  _ -  | |   -_" << std::endl;
+	file << "      // \\\\" << std::endl;
+
+	file.close();
 }
