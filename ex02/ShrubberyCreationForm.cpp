@@ -1,10 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm(145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy) : AForm(145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy) : AForm("ShrubberyCreationForm", 145, 137)
 {
 	*this = copy;
 }

@@ -1,10 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm(25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & copy) : AForm(25, 5)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & copy) : AForm("PresidentialPardonForm", 25, 5)
 {
 	*this = copy;
 }
