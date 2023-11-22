@@ -3,12 +3,16 @@
 
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public AForm
+{
 
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const ShrubberyCreationForm & copy);
+		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm & copy);
+
+		void execute(Bureaucrat const & executor) const;
 
 };
 

@@ -1,5 +1,4 @@
 #include "ShrubberyCreationForm.hpp"
-#include "AForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm(145, 137)
 {
@@ -10,9 +9,18 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy)
 	*this = copy;
 }
 
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+}
+
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
 	if (this == &copy)
 		return *this;
 	return *this;
+}
+
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+{
+	// TODO : implement...
 }
