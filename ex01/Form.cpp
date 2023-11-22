@@ -1,17 +1,17 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _requiredGradeSigned(1), _requiredGradeExecute(1)
+Form::Form() : _name("default"), _requiredGradeSigned(1), _requiredGradeExecute(1)
 {
 	this->_signed = false;
 }
 
-Form::Form(const Form &form) : _requiredGradeSigned(form._requiredGradeSigned), _requiredGradeExecute(form._requiredGradeExecute)
+Form::Form(const Form &form) : _name(form._name), _requiredGradeSigned(form._requiredGradeSigned), _requiredGradeExecute(form._requiredGradeExecute)
 {
 	*this = form;
 }
 
-Form::Form(int gradeSigned, int gradeExecute) : _requiredGradeSigned(gradeSigned), _requiredGradeExecute(gradeExecute)
+Form::Form(std::string name, int gradeSigned, int gradeExecute) : _name(name), _requiredGradeSigned(gradeSigned), _requiredGradeExecute(gradeExecute)
 {
 	this->_signed = false;
 }
