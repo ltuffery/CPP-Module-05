@@ -35,15 +35,18 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	}
 	std::ofstream file(executor.getName() + "_shrubbery");
 
-	file << "       _-_" << std::endl;
-	file << "    /~~   ~~\\" << std::endl;
-	file << " /~~         ~~\\" << std::endl;
-	file << "{               }" << std::endl;
-	file << " \\  _-     -_  /"<< std::endl;
-	file << "   ~  \\\\ //  ~" << std::endl;
-	file << "_- -   | | _- _" << std::endl;
-	file << "  _ -  | |   -_" << std::endl;
-	file << "      // \\\\" << std::endl;
+	for (int i = 0; i < 2; i++)
+	{
+		file << "       _-_" << std::endl;
+		file << "    /~~   ~~\\" << std::endl;
+		file << " /~~         ~~\\" << std::endl;
+		file << "{               }" << std::endl;
+		file << " \\  _-     -_  /"<< std::endl;
+		file << "   ~  \\\\ //  ~" << std::endl;
+		file << "_- -   | | _- _" << std::endl;
+		file << "  _ -  | |   -_" << std::endl;
+		file << "      // \\\\" << std::endl;
+	}
 
 	file.close();
 }
