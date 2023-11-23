@@ -16,6 +16,10 @@ Form::Form(std::string name, int gradeSigned, int gradeExecute) : _name(name), _
 	this->_signed = false;
 }
 
+Form::~Form()
+{
+}
+
 Form & Form::operator=(const Form &form)
 {
 	if (this == &form)
