@@ -6,7 +6,7 @@
 #    By: ltuffery <ltuffery@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 17:52:34 by ltuffery          #+#    #+#              #
-#    Updated: 2023/10/10 13:43:09 by ltuffery         ###   ########.fr        #
+#    Updated: 2023/11/23 14:55:21 by ltuffery         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
-		  Bureaucrat.cpp
+		  Bureaucrat.cpp \
+		  AForm.cpp \
+		  ShrubberyCreationForm.cpp \
+		  RobotomyRequestForm.cpp \
+		  PresidentialPardonForm.cpp
 
 OBJS	= $(SRCS:%.cpp=%.o)
 
