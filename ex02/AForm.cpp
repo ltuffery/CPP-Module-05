@@ -16,6 +16,10 @@ AForm::AForm(std::string name, int gradeSigned, int gradeExecute) : _name(name),
 	this->_signed = false;
 }
 
+AForm::~AForm()
+{
+}
+
 AForm & AForm::operator=(const AForm &form)
 {
 	if (this == &form)

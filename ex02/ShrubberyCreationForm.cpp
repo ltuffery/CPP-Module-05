@@ -2,6 +2,7 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include <fstream>
+#include <string>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
@@ -33,7 +34,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	{
 		return throw AForm::GradeTooLowException();
 	}
-	std::ofstream file(executor.getName() + "_shrubbery");
+	std::string file_name = executor.getName() + "_shrubbery";
+	std::ofstream file(file_name.c_str());
 
 	for (int i = 0; i < 2; i++)
 	{

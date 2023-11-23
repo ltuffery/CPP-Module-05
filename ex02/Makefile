@@ -6,11 +6,11 @@
 #    By: ltuffery <ltuffery@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 17:52:34 by ltuffery          #+#    #+#              #
-#    Updated: 2023/11/23 14:55:21 by ltuffery         ###   ########.fr        #
+#    Updated: 2023/11/23 15:33:23 by ltuffery         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex00.out
+NAME	= ex02.out
 
 CC		= c++
 
