@@ -1,16 +1,22 @@
 #include "RobotomyRequestForm.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include <cstdlib>
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
-
+	this->_target = "default";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & copy) : AForm("RobotomyRequestForm", 72, 45)
 {
 	*this = copy;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm("RobotomyRequestForm", 72, 45)
+{
+	this->_target = target;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -21,6 +27,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 {
 	if (&copy == this)
 		return *this;
+	this->_target = copy._target;
 	return *this;
 }
 
@@ -28,7 +35,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (!this->isSigned())
 	{
-		return throw "Form is not signed";
+		return throw std::runtime_error("Form is not signed");
 	}
 	if (executor.getGrade() > this->getGradeExecute())
 	{
@@ -36,7 +43,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 	}
 	if (rand() % 2)
 	{
-		std::cout << executor.getName() << " has been robotomized" << std::endl;
+		std::cout << this->_target << " has been robotomized" << std::endl;
 	}
 	else
 	{

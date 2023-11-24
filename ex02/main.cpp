@@ -44,9 +44,9 @@ int main(void)
 
 		try
 		{
-			ShrubberyCreationForm shrubberyCreationForm;
-			RobotomyRequestForm robotomyRequestForm;
-			PresidentialPardonForm presidentialPardonForm;
+			ShrubberyCreationForm shrubberyCreationForm("target1");
+			RobotomyRequestForm robotomyRequestForm("target2");
+			PresidentialPardonForm presidentialPardonForm("target3");
 
 			shrubberyCreationForm.beSigned(a);
 			robotomyRequestForm.beSigned(a);
@@ -55,6 +55,7 @@ int main(void)
 			shrubberyCreationForm.execute(a);
 			robotomyRequestForm.execute(a);
 			presidentialPardonForm.execute(a);
+
 			std::cout << "Form execute" << std::endl;
 		}
 		catch(std::exception &e)
@@ -63,9 +64,10 @@ int main(void)
 		}
 		try
 		{
-			ShrubberyCreationForm shrubberyCreationForm;
+			ShrubberyCreationForm shrubberyCreationForm("target1");
 
 			shrubberyCreationForm.execute(a);
+			std::cout << "Form execute" << std::endl;
 		}
 		catch(std::exception &e)
 		{
@@ -73,9 +75,10 @@ int main(void)
 		}
 		try
 		{
-			RobotomyRequestForm robotomyRequestForm;
+			RobotomyRequestForm robotomyRequestForm("target2");
 
 			robotomyRequestForm.beSigned(z);
+			robotomyRequestForm.execute(z);
 		}
 		catch(std::exception &e)
 		{
