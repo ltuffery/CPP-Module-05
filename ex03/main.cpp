@@ -1,4 +1,6 @@
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -81,5 +83,13 @@ int main(void)
 		{
 			std::cout << e.what() << std::endl;
 		}
+	}
+	{
+		Intern intern;
+		AForm *form;
+
+		form = intern.makeForm("presidential", "John");
+		delete form;
+		form = intern.makeForm("test", "Doe");
 	}
 }
